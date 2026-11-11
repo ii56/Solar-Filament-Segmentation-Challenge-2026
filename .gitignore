@@ -1,0 +1,32 @@
+# Competition data (non-commercial licence, not redistributed here)
+Data/
+
+# Large local artefacts: model weights and cached probability maps
+checkpoints/
+cache/
+*.pt
+*.npy
+*.npz
+*.pkl
+
+# Python / tooling
+__pycache__/
+*.pyc
+.venv/
+.ruff_cache/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# LaTeX build output
+report/*.aux
+report/*.bbl
+report/*.blg
+report/*.log
+report/*.out
+report/*.pdf
+report/*.synctex.gz
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/

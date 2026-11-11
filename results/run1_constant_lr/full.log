@@ -1,0 +1,135 @@
+C:\Users\Ibaan Ibrahim\Documents\Coding\Hackathon\Solar Filament Segmentation Challenge 2026
+True
+['checkpoints', 'Data', 'Documentation', 'notebooks', 'submissions']
+True
+['test', 'train']
+['MAGFiLO_1.0_Annotations_kaggle2026_train.json', 'train_images']
+['test_images']
+707
+dict_keys(['info', 'licenses', 'categories', 'images', 'annotations'])
+Num images: 1154
+Num annotations: 8199
+Categories: [{'supercategory': 'filament', 'id': 1, 'name': 'Left'}, {'supercategory': 'filament', 'id': 2, 'name': 'Right'}, {'supercategory': 'filament', 'id': 3, 'name': 'Unidentifiable'}, {'supercategory': 'filament', 'id': 4, 'name': 'Ambiguous'}]
+Avg filaments/image-annotation: 7.104852686308492
+Max: 26 Min: 1
+Bbox width  — mean: 103.2195853762654 median: 74.52260000000001 max: 1067.3136
+Bbox height — mean: 91.78958944993292 median: 69.60519999999997 max: 709.8073999999999
+Area — mean: 2119.8349798755944 median: 1228.0
+p50 — width: 74.5, height: 69.6
+p75 — width: 126.2, height: 116.6
+p90 — width: 202.5, height: 186.5
+p95 — width: 280.9, height: 230.7
+p99 — width: 499.1, height: 358.0
+Crop 256px: 86.3% of filaments fit fully
+Crop 384px: 94.7% of filaments fit fully
+Crop 512px: 97.5% of filaments fit fully
+Crop 768px: 99.7% of filaments fit fully
+Unique physical files: 707
+Total image-id entries: 1154
+Files with multiple annotation sets: 296
+Train: 601 files / 993 image-ids
+Val:   106 files / 161 image-ids
+Num tiles per image: 25
+[(0, 0), (384, 0), (768, 0), (1152, 0), (1536, 0)]
+<class 'list'>
+<class 'list'>
+[480.9382, 850.955, 480.307, 852.0535, 478.2989, 852.451, 476.1202, 851.3087]
+Train tiles: 17442
+Val tiles: 4025
+Train batches: 4361
+Val batches: 1007
+Using: NVIDIA GeForce RTX 2050
+criterion = BCE + Tversky(alpha=0.3, beta=0.7)
+resumed from unet_resnet34_clahe_bce_tversky.pt at epoch 1, best val IoU so far -1.0000
+  [train]     0/4361 avg=1.0629 pmax=0.999
+  [train]  1000/4361 avg=0.4342 pmax=1.000
+  [train]  2000/4361 avg=0.4482 pmax=1.000
+  [train]  3000/4361 avg=0.4467 pmax=1.000
+  [train]  4000/4361 avg=0.4576 pmax=0.999
+Epoch 2/15 - train 0.4559 | val 0.3072 | val IoU 0.3772 | misses 23.2% | 26.5 min | peak 1.29 GiB
+  -> new best val IoU 0.3772 (misses 23.2%)
+  [train]     0/4361 avg=0.4463 pmax=0.999
+  [train]  1000/4361 avg=0.4143 pmax=0.999
+  [train]  2000/4361 avg=0.4444 pmax=0.999
+  [train]  3000/4361 avg=0.4447 pmax=1.000
+  [train]  4000/4361 avg=0.4429 pmax=0.999
+Epoch 3/15 - train 0.4402 | val 0.2797 | val IoU 0.3498 | misses 30.1% | 27.0 min | peak 1.29 GiB
+  [train]     0/4361 avg=0.2742 pmax=1.000
+  [train]  1000/4361 avg=0.4947 pmax=1.000
+  [train]  2000/4361 avg=0.4836 pmax=1.000
+  [train]  3000/4361 avg=0.4579 pmax=1.000
+  [train]  4000/4361 avg=0.4420 pmax=1.000
+Epoch 4/15 - train 0.4395 | val 0.2932 | val IoU 0.3713 | misses 25.0% | 26.7 min | peak 1.29 GiB
+  [train]     0/4361 avg=0.0661 pmax=1.000
+  [train]  1000/4361 avg=0.3917 pmax=1.000
+  [train]  2000/4361 avg=0.3944 pmax=0.000
+  [train]  3000/4361 avg=0.4059 pmax=1.000
+  [train]  4000/4361 avg=0.4026 pmax=1.000
+Epoch 5/15 - train 0.4014 | val 0.2599 | val IoU 0.3900 | misses 24.2% | 26.6 min | peak 1.29 GiB
+  -> new best val IoU 0.3900 (misses 24.2%)
+  [train]     0/4361 avg=0.5004 pmax=0.999
+  [train]  1000/4361 avg=0.3779 pmax=1.000
+  [train]  2000/4361 avg=0.3881 pmax=1.000
+  [train]  3000/4361 avg=0.3866 pmax=1.000
+  [train]  4000/4361 avg=0.3843 pmax=1.000
+Epoch 6/15 - train 0.3825 | val 0.2720 | val IoU 0.3926 | misses 24.0% | 27.0 min | peak 1.29 GiB
+  -> new best val IoU 0.3926 (misses 24.0%)
+  [train]     0/4361 avg=0.7123 pmax=1.000
+  [train]  1000/4361 avg=0.3743 pmax=1.000
+  [train]  2000/4361 avg=0.3722 pmax=0.999
+  [train]  3000/4361 avg=0.3710 pmax=1.000
+  [train]  4000/4361 avg=0.3726 pmax=1.000
+Epoch 7/15 - train 0.3710 | val 0.2557 | val IoU 0.3987 | misses 24.6% | 26.9 min | peak 1.29 GiB
+  -> new best val IoU 0.3987 (misses 24.6%)
+  [train]     0/4361 avg=0.1243 pmax=1.000
+  [train]  1000/4361 avg=0.3839 pmax=0.999
+  [train]  2000/4361 avg=0.3744 pmax=1.000
+  [train]  3000/4361 avg=0.3764 pmax=1.000
+  [train]  4000/4361 avg=0.3745 pmax=0.999
+Epoch 8/15 - train 0.3727 | val 0.2578 | val IoU 0.4160 | misses 21.2% | 27.1 min | peak 1.29 GiB
+  -> new best val IoU 0.4160 (misses 21.2%)
+  [train]     0/4361 avg=0.8657 pmax=1.000
+  [train]  1000/4361 avg=0.3626 pmax=0.999
+  [train]  2000/4361 avg=0.3602 pmax=1.000
+  [train]  3000/4361 avg=0.3656 pmax=0.999
+  [train]  4000/4361 avg=0.3692 pmax=1.000
+Epoch 9/15 - train 0.3687 | val 0.2994 | val IoU 0.2973 | misses 34.6% | 26.9 min | peak 1.29 GiB
+  [train]     0/4361 avg=0.0734 pmax=1.000
+  [train]  1000/4361 avg=0.3602 pmax=1.000
+  [train]  2000/4361 avg=0.3546 pmax=1.000
+  [train]  3000/4361 avg=0.3538 pmax=0.999
+  [train]  4000/4361 avg=0.3525 pmax=1.000
+Epoch 10/15 - train 0.3516 | val 0.2686 | val IoU 0.3709 | misses 29.3% | 27.1 min | peak 1.29 GiB
+  [train]     0/4361 avg=0.5870 pmax=1.000
+  [train]  1000/4361 avg=0.3531 pmax=1.000
+  [train]  2000/4361 avg=0.3598 pmax=1.000
+  [train]  3000/4361 avg=0.3592 pmax=1.000
+  [train]  4000/4361 avg=0.3582 pmax=1.000
+Epoch 11/15 - train 0.3582 | val 0.2741 | val IoU 0.4238 | misses 19.3% | 27.3 min | peak 1.29 GiB
+  -> new best val IoU 0.4238 (misses 19.3%)
+  [train]     0/4361 avg=0.1984 pmax=1.000
+  [train]  1000/4361 avg=0.3382 pmax=1.000
+  [train]  2000/4361 avg=0.3456 pmax=1.000
+  [train]  3000/4361 avg=0.3439 pmax=1.000
+  [train]  4000/4361 avg=0.3438 pmax=0.999
+Epoch 12/15 - train 0.3437 | val 0.2645 | val IoU 0.4001 | misses 25.1% | 27.2 min | peak 1.29 GiB
+  [train]     0/4361 avg=0.1771 pmax=1.000
+  [train]  1000/4361 avg=0.3449 pmax=1.000
+  [train]  2000/4361 avg=0.3420 pmax=0.999
+  [train]  3000/4361 avg=0.3438 pmax=1.000
+  [train]  4000/4361 avg=0.3441 pmax=1.000
+Epoch 13/15 - train 0.3442 | val 0.2522 | val IoU 0.4116 | misses 23.1% | 27.1 min | peak 1.29 GiB
+  [train]     0/4361 avg=0.3051 pmax=1.000
+  [train]  1000/4361 avg=0.3397 pmax=1.000
+  [train]  2000/4361 avg=0.3517 pmax=1.000
+  [train]  3000/4361 avg=0.3515 pmax=1.000
+  [train]  4000/4361 avg=0.3495 pmax=1.000
+Epoch 14/15 - train 0.3522 | val 0.3188 | val IoU 0.2968 | misses 38.6% | 27.2 min | peak 1.29 GiB
+  [train]     0/4361 avg=0.2872 pmax=0.998
+  [train]  1000/4361 avg=0.3627 pmax=1.000
+  [train]  2000/4361 avg=0.3529 pmax=0.999
+  [train]  3000/4361 avg=0.3499 pmax=1.000
+  [train]  4000/4361 avg=0.3517 pmax=1.000
+Epoch 15/15 - train 0.3579 | val 0.2691 | val IoU 0.3423 | misses 35.2% | 27.2 min | peak 1.29 GiB
+
+Done. Best val IoU 0.4238 -> C:\Users\Ibaan Ibrahim\Documents\Coding\Hackathon\Solar Filament Segmentation Challenge 2026\checkpoints\unet_resnet34_clahe_bce_tversky_best.pt
