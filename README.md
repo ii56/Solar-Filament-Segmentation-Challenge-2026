@@ -25,6 +25,7 @@ notebooks/
   01_eda_and_baseline  data exploration and the first baseline (kept as a record)
   02_experiments       evaluation, PQ analysis, post-processing tuning, training runs
   03_submission        test-set inference and the submission CSV
+  04_reproduce_submission   downloads the weights and rebuilds the submission end to end
 submissions/           the submitted CSV
 report/                technical report (LaTeX), figures, and the scripts that produce its numbers
 results/               logs and plots from the first training run
@@ -54,10 +55,11 @@ Data/filament-segmentation-2026/MAGFiLO_1.0_Kaggle_2026/
 
 ## Reproducing the submission
 
-1. Put the trained weights at `checkpoints/unet_resnet34_clahe_bce_tversky_cosine_best.pt`.
-2. Run `notebooks/03_submission.ipynb`. It predicts the 180 test images (about 3 minutes),
-   writes `submissions/submission_8_0.4508_high0.995_low0.4_min_area400.csv` and checks every
-   row against the predicted masks.
+Run `notebooks/04_reproduce_submission.ipynb`. It downloads the trained weights from the
+[v1.0 release](https://github.com/ii56/Solar-Filament-Segmentation-Challenge-2026/releases/tag/v1.0)
+(280 MB, checked by SHA-256), predicts the 180 test images (about 3 minutes on an RTX 2050),
+writes `submissions/reproduced_submission.csv` and compares it with the submitted file. On my
+machine the two files are identical.
 
 ## Training
 
@@ -68,7 +70,8 @@ Training ran on one RTX 2050 (4 GB) at about 27 minutes per epoch, roughly 9 GPU
 2. From the epoch-12 weights, 10 more epochs with cosine decay from 1e-4 to 1e-6. The submitted
    model is epoch 8 of this stage.
 
-Both stages use `F.train` in `src/filament.py`; the calls are in `notebooks/02_experiments.ipynb`.
+Both stages use `F.train` in `src/filament.py`. The last section of
+`notebooks/04_reproduce_submission.ipynb` runs them (off by default).
 
 ## Tests
 

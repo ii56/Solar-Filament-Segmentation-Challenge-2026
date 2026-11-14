@@ -9,6 +9,9 @@ cache/
 *.npz
 *.pkl
 
+# Output of notebooks/04_reproduce_submission.ipynb
+submissions/reproduced_submission.csv
+
 # Python / tooling
 __pycache__/
 *.pyc
